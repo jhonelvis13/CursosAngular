@@ -1,0 +1,27 @@
+<div class="flex justify-center border-black">
+    <h1 class="text-4xl font-bold">{{name}}</h1>   
+</div>
+<hr>
+<div class="flex justify-center border-black">
+    <dl>
+        <td class="text-xl font-semibold">Nombre: </td>
+        <dd class="ml-4">{{name}}</dd>
+    
+        <td class="text-xl font-semibold">Edad: </td>
+        <dd class="ml-4">{{age}}</dd>
+    
+        <td class="text-xl font-semibold">Metodo: </td>
+        <dd class="ml-4">{{ getheroDescripcion() }}</dd>
+    
+        <td class="text-xl font-semibold">Capitalizado: </td>
+        <dd class="ml-4">{{capitalizedName}}</dd>
+    </dl>
+</div>
+<div class="flex justify-center border-slate-95 ">
+    <button *ngIf="name !== 'Spiderman'"
+    class="bg-slate-500 p-3 m-2 rounded-md hover:bg-slate-600" (click)="changeName()">Cambiar nombre</button>
+    <button  *ngIf="age !== 25"
+    class="bg-slate-500 p-3 m-2 rounded-md  hover:bg-slate-600"(click)="changeAge()">Cambiar edad</button>
+    <button *ngIf="name === 'Spiderman' && age ===25"
+    class="bg-slate-500 p-3 m-2 rounded-md  hover:bg-slate-600"(click)="resetValues()">Reset</button>
+</div>
